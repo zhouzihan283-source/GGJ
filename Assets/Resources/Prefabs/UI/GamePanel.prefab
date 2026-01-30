@@ -2147,7 +2147,7 @@ GameObject:
   m_Component:
   - component: {fileID: 6718025904219062384}
   m_Layer: 5
-  m_Name: actBox
+  m_Name: chooseBox
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
