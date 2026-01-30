@@ -1,7 +1,9 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
-
+/// <summary>
+/// “Ù¿÷ ˝æ›
+/// </summary>
 public class MusicData
 {
     public bool ToggleMusic = true;

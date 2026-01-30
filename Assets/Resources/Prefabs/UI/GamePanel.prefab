@@ -1204,7 +1204,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!224 &8836635706813618363
 RectTransform:
   m_ObjectHideFlags: 0
@@ -2153,7 +2153,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!224 &6718025904219062384
 RectTransform:
   m_ObjectHideFlags: 0
@@ -2753,7 +2753,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_Sprite: {fileID: 21300000, guid: 06b542b06ffb90947b6e60b8768b7518, type: 3}
+  m_Sprite: {fileID: 21300000, guid: 84b13902afd86414d97fb4c22d25d099, type: 3}
   m_Type: 0
   m_PreserveAspect: 0
   m_FillCenter: 1
@@ -3612,6 +3612,7 @@ GameObject:
   m_Component:
   - component: {fileID: 973406273043643082}
   - component: {fileID: 5162534401688109538}
+  - component: {fileID: 6554581957155843325}
   m_Layer: 5
   m_Name: GamePanel
   m_TagString: Untagged
@@ -3659,6 +3660,63 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 5189046256077685176}
   m_CullTransparentMesh: 1
+--- !u!114 &6554581957155843325
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5189046256077685176}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 2befc08d9b5790b43a8f67cb9d0d96ba, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  isShow: 0
+  btRoleOne: {fileID: 8209356310444669083}
+  imgNormalOne: {fileID: 3078373051304363118}
+  imgNormalHightLightOne: {fileID: 5660540969851986422}
+  imgWeakOne: {fileID: 7596333830110251458}
+  imgWeakHightLightOne: {fileID: 287985880603493501}
+  imgPanicOne: {fileID: 6680820013252733211}
+  imgPanicHightLightOne: {fileID: 6347124649094478658}
+  imgDeathOne: {fileID: 2032873656337485925}
+  btRoleTwo: {fileID: 4423932910014847227}
+  imgNormalTwo: {fileID: 1825807704644939340}
+  imgNormalHightLightTwo: {fileID: 8326514103871759185}
+  imgWeakTwo: {fileID: 8103522197269941517}
+  imgWeakHightLightTwo: {fileID: 2026576071002971531}
+  imgPanicTwo: {fileID: 8777069077857710447}
+  imgPanicHightLightTwo: {fileID: 1560436595851337500}
+  imgDeathTwo: {fileID: 6765380788907271374}
+  btRoleThree: {fileID: 69050434255379475}
+  imgNormalThree: {fileID: 1037032939323761469}
+  imgNormalHightLightThree: {fileID: 9131498221131022619}
+  imgWeakThree: {fileID: 7419762150777622411}
+  imgWeakHightLightThree: {fileID: 2813213993698959102}
+  imgPanicThree: {fileID: 2081986019293505468}
+  imgPanicHightLightThree: {fileID: 827610530622377061}
+  imgDeathThree: {fileID: 2870792832928086682}
+  btRoleFour: {fileID: 2431304719618619806}
+  imgNormalFour: {fileID: 6406565239102640165}
+  imgNormalHightLightFour: {fileID: 7150350404607837270}
+  imgWeakFour: {fileID: 4059370731314284684}
+  imgWeakHightLightFour: {fileID: 1861960319712879842}
+  imgPanicFour: {fileID: 3516364912133064764}
+  imgPanicHightLightFour: {fileID: 6787880271150272239}
+  imgDeathFour: {fileID: 5620695622789323378}
+  btFood: {fileID: 7137924293345169380}
+  btAct: {fileID: 8682702614456307579}
+  btNote: {fileID: 3490408336616943747}
+  btHelp: {fileID: 3044396846968917740}
+  boxHelp: {fileID: 3238210785343526225}
+  btMaskHelp: {fileID: 5582619382502908631}
+  boxAction: {fileID: 8836635706813618363}
+  btMaskAction: {fileID: 2487284803898578004}
+  boxFood: {fileID: 718119508152705749}
+  btMaskFood: {fileID: 2609864223781975244}
+  boxChoose: {fileID: 6718025904219062384}
+  btMaskChoose: {fileID: 4284532023189482687}
 --- !u!1 &5225477840233945882
 GameObject:
   m_ObjectHideFlags: 0

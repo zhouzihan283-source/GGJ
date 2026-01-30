@@ -6,8 +6,8 @@ using UnityEngine;
 /// </summary>
 public enum RoleState
 {
-    Normal,
-    Weak,
-    Panic,
-    Dead
+    normal,
+    weak,
+    panic,
+    death
 }

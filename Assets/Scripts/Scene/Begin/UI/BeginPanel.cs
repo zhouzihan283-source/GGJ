@@ -21,6 +21,7 @@ public class BeginPanel : BasePanel
         {
             UIManager.Instance.HidePanel<BeginPanel>();
             SceneManager.LoadScene("GameScene");
+            UIManager.Instance.ShowPanel<GamePanel>();
         });
 
         btSetting.onClick.AddListener(() =>
