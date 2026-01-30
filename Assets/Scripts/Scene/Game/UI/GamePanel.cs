@@ -56,26 +56,6 @@ public class GamePanel : BasePanel
     public Button btNote;
     public Button btHelp;
     
-    [Header("HelpBox")]
-    public Transform boxHelp;
-    public Button btMaskHelp;
-    
-    [Header("ActionBox")]
-    public Transform boxAction;
-    public Button btMaskAction;
-    public Button btChoose;
-    public Button btHear;
-    public Button btKill;
-    public Button btStill;
-    
-    [Header("foodBox")]
-    public Transform boxFood;
-    public Button btMaskFood;
-    
-    [Header("ChooseBox")]
-    public Transform boxChoose;
-    public Button btMaskChoose;
-    
 
 
     private void Start()
@@ -102,12 +82,12 @@ public class GamePanel : BasePanel
         
         btFood.onClick.AddListener(() =>
         {
-            boxFood.gameObject.SetActive(true);
+
         });
         
         btAct.onClick.AddListener(() =>
         {
-            boxAction.gameObject.SetActive(true);
+
         });
         
         btNote.onClick.AddListener(() =>
@@ -117,32 +97,8 @@ public class GamePanel : BasePanel
         
         btHelp.onClick.AddListener(() =>
         {
-            boxHelp.gameObject.SetActive(true);
+
         });
         
-        btMaskHelp.onClick.AddListener(() =>
-        {
-            boxHelp.gameObject.SetActive(false);
-        });
-        
-        btMaskAction.onClick.AddListener(() =>
-        {
-            boxAction.gameObject.SetActive(false);
-        });
-        
-        btMaskFood.onClick.AddListener(() =>
-        {
-            boxFood.gameObject.SetActive(false);
-        });
-        
-        btMaskChoose.onClick.AddListener(() =>
-        {
-            boxChoose.gameObject.SetActive(false);
-        });
-        
-        btChoose.onClick.AddListener(() =>
-        {
-            boxChoose.gameObject.SetActive(false);
-        });
     }
 }
