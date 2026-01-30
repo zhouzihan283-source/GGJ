@@ -6,7 +6,6 @@ using UnityEngine.UI;
 
 public class GamePanel : BasePanel
 {
-    
     [Header("第一个角色")]
     public Button btRoleOne;
     public Image imgNormalOne;
