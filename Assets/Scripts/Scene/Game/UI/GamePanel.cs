@@ -63,6 +63,10 @@ public class GamePanel : BasePanel
     [Header("ActionBox")]
     public Transform boxAction;
     public Button btMaskAction;
+    public Button btChoose;
+    public Button btHear;
+    public Button btKill;
+    public Button btStill;
     
     [Header("foodBox")]
     public Transform boxFood;
@@ -132,6 +136,11 @@ public class GamePanel : BasePanel
         });
         
         btMaskChoose.onClick.AddListener(() =>
+        {
+            boxChoose.gameObject.SetActive(false);
+        });
+        
+        btChoose.onClick.AddListener(() =>
         {
             boxChoose.gameObject.SetActive(false);
         });
