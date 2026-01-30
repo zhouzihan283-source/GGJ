@@ -5,7 +5,7 @@ using UnityEngine;
 using UnityEngine.UI;
 
 /// <summary>
-/// 选择外出面板
+/// 閫夋嫨澶栧嚭闈㈡澘
 /// </summary>
 public class ChoosePanel : BasePanel
 {

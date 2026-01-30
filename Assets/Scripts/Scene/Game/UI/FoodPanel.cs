@@ -5,7 +5,7 @@ using UnityEngine;
 using UnityEngine.UI;
 
 /// <summary>
-/// Ñ¡ÔñÎ¹Ê³ÎïÃæ°å
+/// é€‰æ‹©å–‚é£Ÿç‰©é¢æ¿
 /// </summary>
 public class FoodPanel : BasePanel
 {

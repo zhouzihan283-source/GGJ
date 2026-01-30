@@ -5,19 +5,19 @@ using UnityEngine;
 using UnityEngine.UI;
 
 /// <summary>
-/// Ñ¡ÔñËÄÖÖÑ¡ÏîÃæ°å
+/// é€‰æ‹©å››ç§é€‰é¡¹é¢æ¿
 /// </summary>
 public class ActionPanel : BasePanel
 {
-    /// <summary> ¹Ø±Õ°´Å¥ </summary>
+    /// <summary> å…³é—­æŒ‰é’® </summary>
     public Button btCloseMask;
-    /// <summary> Íâ³ö°´Å¥ </summary>
+    /// <summary> å¤–å‡ºæŒ‰é’® </summary>
     public Button btAct;
-    /// <summary> ÍµÌı°´Å¥ </summary>
+    /// <summary> å·å¬æŒ‰é’® </summary>
     public Button btHear;
-    /// <summary> »÷É±°´Å¥ </summary>
+    /// <summary> å‡»æ€æŒ‰é’® </summary>
     public Button btKill;
-    /// <summary> ÍµÊ³Îï°´Å¥ </summary>
+    /// <summary> å·é£Ÿç‰©æŒ‰é’® </summary>
     public Button btSteal;
 
     private void Start()

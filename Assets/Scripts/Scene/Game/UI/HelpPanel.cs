@@ -5,7 +5,7 @@ using UnityEngine;
 using UnityEngine.UI;
 
 /// <summary>
-/// °ïÖúÃæ°å
+/// å¸®åŠ©é¢æ¿
 /// </summary>
 public class HelpPanel : BasePanel
 {
