@@ -82,12 +82,12 @@ public class GamePanel : BasePanel
         
         btFood.onClick.AddListener(() =>
         {
-
+            UIManager.Instance.ShowPanel<FoodPanel>();
         });
         
         btAct.onClick.AddListener(() =>
         {
-
+            UIManager.Instance.ShowPanel<ActionPanel>();
         });
         
         btNote.onClick.AddListener(() =>
@@ -97,7 +97,7 @@ public class GamePanel : BasePanel
         
         btHelp.onClick.AddListener(() =>
         {
-
+            UIManager.Instance.ShowPanel<HelpPanel>();
         });
         
     }

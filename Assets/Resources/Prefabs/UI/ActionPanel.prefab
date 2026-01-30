@@ -129,6 +129,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 5957323517652887420}
+  - component: {fileID: 6232871188134934427}
   m_Layer: 5
   m_Name: ActionPanel
   m_TagString: Untagged
@@ -161,6 +162,24 @@ RectTransform:
   m_AnchoredPosition: {x: 0, y: 0}
   m_SizeDelta: {x: 2560, y: 1440}
   m_Pivot: {x: 0.5, y: 0.5}
+--- !u!114 &6232871188134934427
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2797562346704470440}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ded988ca0f3bf8d45932de9df6c314e5, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  isShow: 0
+  btCloseMask: {fileID: 8988843368086383992}
+  btAct: {fileID: 7273048585656472351}
+  btHear: {fileID: 4306649365146194567}
+  btKill: {fileID: 393141066345897325}
+  btSteal: {fileID: 3540536359943675346}
 --- !u!1 &2830302897608402014
 GameObject:
   m_ObjectHideFlags: 0
@@ -294,7 +313,7 @@ GameObject:
   - component: {fileID: 6655158730371265956}
   - component: {fileID: 3540536359943675346}
   m_Layer: 5
-  m_Name: stillBtn
+  m_Name: stealBtn
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
