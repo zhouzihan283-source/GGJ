@@ -10,7 +10,7 @@ namespace ZZH.Core
     public static class CollectionExtension
     {
         /// <summary>
-        /// 是否为null或空集合
+        /// 是否为null或空集合.
         /// </summary>
         public static bool IsNullOrEmpty<T>(this ICollection<T> collection)
         {
