@@ -6,7 +6,7 @@ using UnityEngine.UI;
 
 public class GamePanel : BasePanel
 {
-    [Header("µÚÒ»¸ö½ÇÉ«")]
+    [Header("ç¬¬ä¸€ä¸ªè§’è‰²")]
     public Button btRoleOne;
     public Image imgNormalOne;
     public Image imgNormalHightLightOne;
@@ -16,7 +16,7 @@ public class GamePanel : BasePanel
     public Image imgPanicHightLightOne;
     public Image imgDeathOne;
     
-    [Header("µÚ¶ş¸ö½ÇÉ«")]
+    [Header("ç¬¬äºŒä¸ªè§’è‰²")]
     public Button btRoleTwo;
     public Image imgNormalTwo;
     public Image imgNormalHightLightTwo;
@@ -28,7 +28,7 @@ public class GamePanel : BasePanel
 
     
     
-    [Header("µÚÈı¸ö½ÇÉ«")]
+    [Header("ç¬¬ä¸‰ä¸ªè§’è‰²")]
     public Button btRoleThree;
     public Image imgNormalThree;
     public Image imgNormalHightLightThree;
@@ -40,7 +40,7 @@ public class GamePanel : BasePanel
 
     
     
-    [Header("µÚËÄ¸ö½ÇÉ«")]
+    [Header("ç¬¬å››ä¸ªè§’è‰²")]
     public Button btRoleFour;
     public Image imgNormalFour;
     public Image imgNormalHightLightFour;
@@ -50,7 +50,7 @@ public class GamePanel : BasePanel
     public Image imgPanicHightLightFour;
     public Image imgDeathFour;
 
-    [Header("Ö÷½çÃæËÄ¸ö°´Å¥")]
+    [Header("ä¸»ç•Œé¢å››ä¸ªæŒ‰é’®")]
     public Button btFood;
     public Button btAct;
     public Button btNote;

@@ -2,7 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 /// <summary>
-/// ÒôÀÖÊı¾İ
+/// éŸ³ä¹æ•°æ®
 /// </summary>
 public class MusicData
 {
