@@ -2,7 +2,10 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class RoleStateType : MonoBehaviour
+public enum RoleName
 {
-    public RoleState roleState;
+    role1,
+    role2,
+    role3,
+    role4
 }

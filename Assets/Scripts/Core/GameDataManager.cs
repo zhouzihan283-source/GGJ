@@ -12,7 +12,7 @@ public class GameDataManager
 
     public MusicData musicData;
     
-    public List<RoleData>  roleData;
+    public List<RoleData>  roleDatas;
     
     
     
@@ -20,7 +20,7 @@ public class GameDataManager
     private GameDataManager()
     {
         musicData = JsonMgr.Instance.LoadData<MusicData>("MusicData");
-        roleData = JsonMgr.Instance.LoadData<List<RoleData>>("RoleData");
+        roleDatas = JsonMgr.Instance.LoadData<List<RoleData>>("RoleData");
     }
     
     public void SaveMusicData()

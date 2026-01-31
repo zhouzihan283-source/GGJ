@@ -11,7 +11,7 @@ public class DaySystem : MonoBehaviour
     /// <summary> 当前天数 </summary>
     public int currentDay = 1;
     /// <summary> 每天持续时间 </summary>
-    public float dayDuration = 10f;
+    public float dayDuration = 5f;
     private float timer;
     private bool isGameEnd = false;
 

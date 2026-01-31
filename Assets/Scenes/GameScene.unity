@@ -152,6 +152,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   totalDays: 13
+  currentDay: 1
   dayDuration: 10
 --- !u!4 &313537518
 Transform:

@@ -90,9 +90,8 @@ GameObject:
   - component: {fileID: 5543543402342062445}
   - component: {fileID: 8178654666077081774}
   - component: {fileID: 6112876219775993152}
-  - component: {fileID: 3963312901947928661}
   m_Layer: 5
-  m_Name: roldeImg
+  m_Name: roleImg
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -155,23 +154,6 @@ MonoBehaviour:
   m_FillOrigin: 0
   m_UseSpriteMesh: 0
   m_PixelsPerUnitMultiplier: 1
---- !u!114 &3963312901947928661
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 6143663259238739937}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: ac119ce4d27b6a64ebc4960e28cb99ef, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  maxHp: 3
-  currentHp: 0
-  imgRole: {fileID: 0}
-  labName: {fileID: 0}
-  labState: {fileID: 0}
 --- !u!1 &6572688935674209223
 GameObject:
   m_ObjectHideFlags: 0
@@ -207,7 +189,7 @@ RectTransform:
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
   m_AnchoredPosition: {x: 0, y: 626.5}
-  m_SizeDelta: {x: 160, y: 71.54}
+  m_SizeDelta: {x: 555.31, y: 71.54}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!222 &3355142819680795293
 CanvasRenderer:
@@ -302,6 +284,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ac119ce4d27b6a64ebc4960e28cb99ef, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  roleName: 0
   maxHp: 3
   currentHp: 0
   imgRole: {fileID: 6112876219775993152}
