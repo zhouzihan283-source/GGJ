@@ -14,6 +14,12 @@ public class GameDataManager
     
     public List<RoleData>  roleDatas;
     
+    public List<DayData> dayDatas;
+    public List<EatData> eatDatas;
+    public List<EndData> endDatas;
+    public List<HearData> hearDatas;
+    public List<OutsideData> outsideDatas;
+    
     
     
 
@@ -21,6 +27,11 @@ public class GameDataManager
     {
         musicData = JsonMgr.Instance.LoadData<MusicData>("MusicData");
         roleDatas = JsonMgr.Instance.LoadData<List<RoleData>>("RoleData");
+        dayDatas = JsonMgr.Instance.LoadData<List<DayData>>("DayData");
+        eatDatas =  JsonMgr.Instance.LoadData<List<EatData>>("EatData");
+        endDatas = JsonMgr.Instance.LoadData<List<EndData>>("EndData");
+        hearDatas = JsonMgr.Instance.LoadData<List<HearData>>("HearData");
+        outsideDatas = JsonMgr.Instance.LoadData<List<OutsideData>>("OutsideData");
     }
     
     public void SaveMusicData()

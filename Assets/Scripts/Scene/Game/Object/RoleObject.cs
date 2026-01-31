@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.EventSystems;
 using UnityEngine.UI;
 using ZZH.Core;
 /// <summary>
@@ -34,6 +35,41 @@ public class RoleObject : MonoBehaviour
         {
             labName.text = data.CnName;
         }
+        
+        // 鼠标进入
+        EventTrigger trigger = gameObject.AddComponent<EventTrigger>();
+
+        EventTrigger.Entry enter = new EventTrigger.Entry();
+        enter.eventID = EventTriggerType.PointerEnter;
+        enter.callback.AddListener((data) =>
+        {
+            if (roleDatas.TryFind(n => n.RoleName == roleName.ToString() && n.State == currentState.ToString(),
+                    out RoleData _data))
+            {
+                if (_data.HighlightSprite != null)
+                {
+                    Sprite roleSprite = Resources.Load<Sprite>("Sprite/Character/" + _data.HighlightSprite);
+                    imgRole.sprite = roleSprite;   
+                }
+            }
+        });
+
+        // 鼠标移出
+        EventTrigger.Entry exit = new EventTrigger.Entry();
+        exit.eventID = EventTriggerType.PointerExit;
+        exit.callback.AddListener((data) =>
+        {
+            if (roleDatas.TryFind(n => n.RoleName == roleName.ToString() && n.State == currentState.ToString(),
+                    out RoleData _data))
+            {
+                Sprite roleSprite = Resources.Load<Sprite>("Sprite/Character/" + _data.NormalSprite);
+                imgRole.sprite = roleSprite;   
+            }
+        });
+
+        trigger.triggers.Add(enter);
+        trigger.triggers.Add(exit);
+        
         UpdateState();
     }
 

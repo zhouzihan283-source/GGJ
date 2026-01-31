@@ -41,9 +41,7 @@ public class BeginPanel : BasePanel
     
     private IEnumerator StartGameFlow()
     {
-        SceneManager.LoadScene("GameScene");
         
-        yield return null;
         
         ChangeDayPanel changeDayPanel = UIManager.Instance.ShowPanel<ChangeDayPanel>();
         changeDayPanel.labDay.text = "1";
@@ -52,6 +50,7 @@ public class BeginPanel : BasePanel
         
         UIManager.Instance.ShowPanel<GamePanel>();
         UIManager.Instance.HidePanel<BeginPanel>();
+        SceneManager.LoadScene("GameScene");
     }
 
     
