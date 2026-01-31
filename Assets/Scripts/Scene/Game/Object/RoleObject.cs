@@ -17,7 +17,11 @@ public class RoleObject : MonoBehaviour
     public Text labName;
     public Text labState;
 
-    public RoleState CurrentState { get; private set; }
+    private RoleLifeState currentState;
+    public RoleLifeState CurrentState => currentState;
+    
+    private RoleEffect currentEffect;
+    public RoleEffect CurrentEffect => currentEffect;
     
     private List<RoleData> roleDatas;
     
@@ -32,18 +36,34 @@ public class RoleObject : MonoBehaviour
         }
         UpdateState();
     }
-    
+
+    /// <summary>
+    /// 外出
+    /// </summary>
+    public void GoOutSide()
+    {
+        if (currentState == RoleLifeState.death)
+            return;
+
+        currentEffect = RoleEffect.Panic;
+        currentState = RoleLifeState.weak;
+        DaySystem.Instance.NextDay();
+    }
+
     /// <summary>
     /// 每天扣血
     /// </summary>
     public void OnNewDay()
     {
-        if (CurrentState == RoleState.death)
+        if (currentState == RoleLifeState.death)
         {
             return;
         }
 
-        currentHp--;
+        if (currentEffect != RoleEffect.Panic)
+        {
+            currentHp--;   
+        }
 
         UpdateState();
     }
@@ -53,7 +73,10 @@ public class RoleObject : MonoBehaviour
     /// </summary>
     public void EatFood()
     {
-        if (CurrentState == RoleState.death) return;
+        if (currentState == RoleLifeState.death)
+        {
+            return;
+        }
 
         currentHp = maxHp;
         UpdateState();
@@ -66,22 +89,46 @@ public class RoleObject : MonoBehaviour
     {
         if (currentHp <= 0)
         {
-            CurrentState = RoleState.death;
+            currentState = RoleLifeState.death;
         }
         else if (currentHp == 1)
         {
-            CurrentState = RoleState.weak;
+            currentState = RoleLifeState.weak;
         }
         else
         {
-            CurrentState = RoleState.normal;
+            currentState = RoleLifeState.normal;
         }
-        
-        if (roleDatas.TryFind(n => n.RoleName == roleName.ToString() && n.State == CurrentState.ToString(),out RoleData data))
+
+        //如果有惊慌状态
+        if (currentEffect == RoleEffect.Panic)
         {
-            labState.text = data.CnState;
-            Sprite roleSprite = Resources.Load<Sprite>("Sprite/Character/" + data.NormalSprite);
-            imgRole.sprite = roleSprite;
+            if (roleDatas.TryFindAll(n => n.RoleName == roleName.ToString(),out List<RoleData> data))
+            {
+                string _string = "";
+                for (int i = 0; i < data.Count; i++)
+                {
+                    if (data[i].State == RoleLifeState.weak.ToString() || data[i].State == RoleEffect.Panic.ToString())
+                    {
+                        _string += data[i].CnState;
+                    }
+                }
+                labState.text = _string;
+                Sprite roleSprite = Resources.Load<Sprite>("Sprite/Character/" + data.Find(n=>n.State==RoleEffect.Panic.ToString()).NormalSprite);
+                imgRole.sprite = roleSprite;
+            }
         }
+        //如果没有惊慌状态
+        else
+        {
+            if (roleDatas.TryFind(n => n.RoleName == roleName.ToString() && n.State == currentState.ToString(),out RoleData data))
+            {
+                labState.text = data.CnState;
+                Sprite roleSprite = Resources.Load<Sprite>("Sprite/Character/" + data.NormalSprite);
+                imgRole.sprite = roleSprite;
+            }
+        }
+
+        
     }
 }

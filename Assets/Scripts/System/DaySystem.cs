@@ -5,6 +5,9 @@ using UnityEngine;
 /// </summary>
 public class DaySystem : MonoBehaviour
 {
+    private static DaySystem instance;
+    public static DaySystem Instance => instance;
+    
 
     /// <summary> 存活天数 </summary>
     public int totalDays = 13;
@@ -19,31 +22,22 @@ public class DaySystem : MonoBehaviour
 
     private void Start()
     {
+        instance = this;
         allRoles = FindObjectsOfType<RoleObject>();
         timer = dayDuration;
         Debug.Log($"第 {currentDay} 天开始");
     }
+    
 
-    private void Update()
+    /// <summary>
+    /// 进入新的一天
+    /// </summary>
+    public void NextDay()
     {
         if (isGameEnd)
         {
             return;
         }
-
-        timer -= Time.deltaTime;
-
-        if (timer <= 0)
-        {
-            NextDay();
-        }
-    }
-
-    /// <summary>
-    /// 进入新的一天
-    /// </summary>
-    private void NextDay()
-    {
 
         // 所有角色扣血
         foreach (var role in allRoles)

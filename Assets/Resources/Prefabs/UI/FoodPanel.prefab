@@ -134,6 +134,10 @@ MonoBehaviour:
   isShow: 0
   btCloseMask: {fileID: 401011780365325838}
   btSure: {fileID: 8968165087536014723}
+  character1: {fileID: 2786889930445929417}
+  character2: {fileID: 1000355876589566450}
+  character3: {fileID: 1552049295748410501}
+  character4: {fileID: 2130035366783784023}
 --- !u!1 &938679605423878792
 GameObject:
   m_ObjectHideFlags: 0
