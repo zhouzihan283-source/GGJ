@@ -80,6 +80,8 @@ public class RoleObject : MonoBehaviour
         if (roleDatas.TryFind(n => n.RoleName == roleName.ToString() && n.State == CurrentState.ToString(),out RoleData data))
         {
             labState.text = data.CnState;
+            Sprite roleSprite = Resources.Load<Sprite>("Sprite/Character/" + data.NormalSprite);
+            imgRole.sprite = roleSprite;
         }
     }
 }
