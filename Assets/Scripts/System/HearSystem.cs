@@ -2,11 +2,9 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 /// <summary>
-/// Role的效果
+/// 偷听系统
 /// </summary>
-public enum RoleEffect
+public class HearSystem : MonoBehaviour
 {
-    normal,
-    panic
+    
 }
-
