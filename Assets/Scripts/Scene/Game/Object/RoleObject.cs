@@ -1,6 +1,8 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
+
 /// <summary>
 /// 角色实体
 /// </summary>
@@ -8,6 +10,10 @@ public class RoleObject : MonoBehaviour
 {
     public int maxHp = 3;
     public int currentHp;
+
+    public Image imgRole;
+    public Text labName;
+    public Text labState;
 
     public RoleState CurrentState { get; private set; }
 
