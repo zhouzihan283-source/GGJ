@@ -42,12 +42,12 @@ public class ActionPanel : BasePanel
         //杀人
         btKill.onClick.AddListener(() =>
         {
-            
+            UIManager.Instance.ShowPanel<KillPanel>();
         });
         //偷食物
         btSteal.onClick.AddListener(() =>
         {
-            
+            UIManager.Instance.ShowPanel<StealPanel>();
         });
     }
 }

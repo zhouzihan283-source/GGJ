@@ -14,6 +14,8 @@
     <file url="file://$PROJECT_DIR$/Assets/Scripts/Scene/Game/UI/FoodPanel.cs" charset="UTF-8" />
     <file url="file://$PROJECT_DIR$/Assets/Scripts/Scene/Game/UI/GamePanel.cs" charset="UTF-8" />
     <file url="file://$PROJECT_DIR$/Assets/Scripts/Scene/Game/UI/HelpPanel.cs" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/Assets/Scripts/Scene/Game/UI/KillPanel.cs" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/Assets/Scripts/Scene/Game/UI/StealPanel.cs" charset="UTF-8" />
     <file url="file://$PROJECT_DIR$/Assets/Scripts/System/DaySystem.cs" charset="UTF-8" />
     <file url="file://$PROJECT_DIR$/Assets/Scripts/System/HearSystem.cs" charset="UTF-8" />
   </component>
