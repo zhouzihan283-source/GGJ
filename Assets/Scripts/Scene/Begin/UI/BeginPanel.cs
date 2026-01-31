@@ -15,7 +15,6 @@ public class BeginPanel : BasePanel
     public Button btAbout;
     public Button btQuit;
 
-
     public void Start()
     {
         btStart.onClick.AddListener(() =>
