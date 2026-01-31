@@ -1,3 +1,4 @@
+using System;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
@@ -83,6 +84,7 @@ public class RoleObject : MonoBehaviour
 
         currentEffect = RoleEffect.panic;
         currentHp = 1;
+        PatrolSystem.Instance.OnCharacterGoOutside(this);
         DaySystem.Instance.NextDay();
     }
     /// <summary>
