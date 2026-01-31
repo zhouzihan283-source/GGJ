@@ -6,6 +6,7 @@ using UnityEngine.UI;
 
 public class GamePanel : BasePanel
 {
+    public GameObject roleObjectPrefab;
     [Header("第一个角色")]
     public Button btRoleOne;
     
@@ -23,11 +24,28 @@ public class GamePanel : BasePanel
     public Button btAct;
     public Button btNote;
     public Button btHelp;
-    
 
+    
 
     private void Start()
     {
+        GameObject objOne = Instantiate(roleObjectPrefab, btRoleOne.transform);
+        GameObject objTwo = Instantiate(roleObjectPrefab, btRoleTwo.transform);
+        GameObject objThree = Instantiate(roleObjectPrefab, btRoleThree.transform);
+        GameObject objFour = Instantiate(roleObjectPrefab, btRoleFour.transform);
+        RoleObject roleObjOne = objOne.GetComponent<RoleObject>();
+        RoleObject roleObjTwo = objTwo.GetComponent<RoleObject>();
+        RoleObject roleObjThree = objThree.GetComponent<RoleObject>();
+        RoleObject roleObjFour = objFour.GetComponent<RoleObject>();
+        roleObjOne.roleName = RoleName.role1;
+        roleObjTwo.roleName = RoleName.role2;
+        roleObjThree.roleName = RoleName.role3;
+        roleObjFour.roleName = RoleName.role4;
+        roleObjOne.InitData();
+        roleObjTwo.InitData();
+        roleObjThree.InitData();
+        roleObjFour.InitData();
+        
         btRoleOne.onClick.AddListener(() =>
         {
             

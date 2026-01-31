@@ -2,12 +2,14 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
-
+using ZZH.Core;
 /// <summary>
 /// 角色实体
 /// </summary>
 public class RoleObject : MonoBehaviour
 {
+    public RoleName roleName;
+    
     public int maxHp = 3;
     public int currentHp;
 
@@ -16,13 +18,21 @@ public class RoleObject : MonoBehaviour
     public Text labState;
 
     public RoleState CurrentState { get; private set; }
+    
+    private List<RoleData> roleDatas;
+    
 
-    private void Awake()
+    public void InitData()
     {
+        roleDatas = GameDataManager.Instance.roleDatas;
         currentHp = maxHp;
+        if (roleDatas.TryFind(n => n.RoleName == roleName.ToString(),out RoleData data))
+        {
+            labName.text = data.CnName;
+        }
         UpdateState();
     }
-
+    
     /// <summary>
     /// 每天扣血
     /// </summary>
@@ -66,6 +76,10 @@ public class RoleObject : MonoBehaviour
         {
             CurrentState = RoleState.normal;
         }
-
+        
+        if (roleDatas.TryFind(n => n.RoleName == roleName.ToString() && n.State == CurrentState.ToString(),out RoleData data))
+        {
+            labState.text = data.CnState;
+        }
     }
 }
