@@ -2,12 +2,11 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 /// <summary>
-/// Role状态
+/// Role生命状态
 /// </summary>
-public enum RoleState
+public enum RoleLifeState
 {
     normal,
     weak,
-    panic,
     death
 }
