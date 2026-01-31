@@ -13,9 +13,6 @@ public class DaySystem : MonoBehaviour
     public int totalDays = 13;
     /// <summary> 当前天数 </summary>
     public int currentDay = 1;
-    /// <summary> 每天持续时间 </summary>
-    private float dayDuration = 5f;
-    private float timer;
     private bool isGameEnd = false;
 
     private RoleObject[] allRoles;
@@ -24,8 +21,6 @@ public class DaySystem : MonoBehaviour
     {
         instance = this;
         allRoles = FindObjectsOfType<RoleObject>();
-        timer = dayDuration;
-        Debug.Log($"第 {currentDay} 天开始");
     }
     
 
@@ -53,9 +48,8 @@ public class DaySystem : MonoBehaviour
         }
 
         currentDay++;
-        timer = dayDuration;
-
-        Debug.Log($"第 {currentDay} 天开始");
+        ChangeDayPanel changeDayPanel = UIManager.Instance.ShowPanel<ChangeDayPanel>();
+        changeDayPanel.labDay.text = currentDay.ToString();
     }
 
     /// <summary>

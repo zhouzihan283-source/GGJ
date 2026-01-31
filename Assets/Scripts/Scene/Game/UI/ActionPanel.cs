@@ -22,26 +22,27 @@ public class ActionPanel : BasePanel
 
     private void Start()
     {
+        //关闭遮罩
         btCloseMask.onClick.AddListener(() =>
         {
             UIManager.Instance.HidePanel<ActionPanel>();
         });
-        
+        //外出
         btAct.onClick.AddListener(() =>
         { 
             UIManager.Instance.ShowPanel<ChoosePanel>();
         });
-        
+        //偷听
         btHear.onClick.AddListener(() =>
         {
             
         });
-        
+        //杀人
         btKill.onClick.AddListener(() =>
         {
             
         });
-        
+        //偷食物
         btSteal.onClick.AddListener(() =>
         {
             

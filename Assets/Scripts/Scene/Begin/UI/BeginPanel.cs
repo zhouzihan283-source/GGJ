@@ -19,10 +19,9 @@ public class BeginPanel : BasePanel
     {
         btStart.onClick.AddListener(() =>
         {
-            UIManager.Instance.HidePanel<BeginPanel>();
-            SceneManager.LoadScene("GameScene");
-            UIManager.Instance.ShowPanel<GamePanel>();
+            StartCoroutine(StartGameFlow());
         });
+        
 
         btSetting.onClick.AddListener(() =>
         {
@@ -39,6 +38,22 @@ public class BeginPanel : BasePanel
             Application.Quit();
         });
     }
+    
+    private IEnumerator StartGameFlow()
+    {
+        SceneManager.LoadScene("GameScene");
+        
+        yield return null;
+        
+        ChangeDayPanel changeDayPanel = UIManager.Instance.ShowPanel<ChangeDayPanel>();
+        changeDayPanel.labDay.text = "1";
+        
+        yield return new WaitForSeconds(4f);
+        
+        UIManager.Instance.ShowPanel<GamePanel>();
+        UIManager.Instance.HidePanel<BeginPanel>();
+    }
+
     
 
 }

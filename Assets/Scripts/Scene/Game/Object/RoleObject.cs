@@ -45,8 +45,8 @@ public class RoleObject : MonoBehaviour
         if (currentState == RoleLifeState.death)
             return;
 
-        currentEffect = RoleEffect.Panic;
-        currentState = RoleLifeState.weak;
+        currentEffect = RoleEffect.panic;
+        currentHp = 1;
         DaySystem.Instance.NextDay();
     }
 
@@ -60,7 +60,7 @@ public class RoleObject : MonoBehaviour
             return;
         }
 
-        if (currentEffect != RoleEffect.Panic)
+        if (currentEffect != RoleEffect.panic)
         {
             currentHp--;   
         }
@@ -101,20 +101,20 @@ public class RoleObject : MonoBehaviour
         }
 
         //如果有惊慌状态
-        if (currentEffect == RoleEffect.Panic)
+        if (currentEffect == RoleEffect.panic)
         {
             if (roleDatas.TryFindAll(n => n.RoleName == roleName.ToString(),out List<RoleData> data))
             {
                 string _string = "";
                 for (int i = 0; i < data.Count; i++)
                 {
-                    if (data[i].State == RoleLifeState.weak.ToString() || data[i].State == RoleEffect.Panic.ToString())
+                    if (data[i].State == currentState.ToString() || data[i].State == RoleEffect.panic.ToString())
                     {
-                        _string += data[i].CnState;
+                        _string += data[i].CnState + "、";
                     }
                 }
                 labState.text = _string;
-                Sprite roleSprite = Resources.Load<Sprite>("Sprite/Character/" + data.Find(n=>n.State==RoleEffect.Panic.ToString()).NormalSprite);
+                Sprite roleSprite = Resources.Load<Sprite>("Sprite/Character/" + data.Find(n=>n.State==RoleEffect.panic.ToString()).NormalSprite);
                 imgRole.sprite = roleSprite;
             }
         }
