@@ -8,7 +8,9 @@ public class RoleData
 {
     public int RoleId;
     public string RoleName;
+    public string CnName;
     public string State;
+    public string CnState;
     public string NormalSprite;
     public string HighlightSprite;
 }

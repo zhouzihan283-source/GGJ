@@ -1,16 +1,16 @@
 using UnityEngine;
 
 /// <summary>
-/// Ã¿ÌìÏµÍ³
+/// æ¯å¤©ç³»ç»Ÿ
 /// </summary>
 public class DaySystem : MonoBehaviour
 {
 
-    /// <summary> ´æ»îÌìÊı </summary>
+    /// <summary> å­˜æ´»å¤©æ•° </summary>
     public int totalDays = 13;
-    /// <summary> µ±Ç°ÌìÊı </summary>
+    /// <summary> å½“å‰å¤©æ•° </summary>
     public int currentDay = 1;
-    /// <summary> Ã¿Ìì³ÖĞøÊ±¼ä </summary>
+    /// <summary> æ¯å¤©æŒç»­æ—¶é—´ </summary>
     public float dayDuration = 10f;
     private float timer;
     private bool isGameEnd = false;
@@ -40,18 +40,18 @@ public class DaySystem : MonoBehaviour
     }
 
     /// <summary>
-    /// ½øÈëĞÂµÄÒ»Ìì
+    /// è¿›å…¥æ–°çš„ä¸€å¤©
     /// </summary>
     private void NextDay()
     {
 
-        // ËùÓĞ½ÇÉ«¿ÛÑª
+        // æ‰€æœ‰è§’è‰²æ‰£è¡€
         foreach (var role in allRoles)
         {
             role.OnNewDay();
         }
 
-        // ÊÇ·ñ½øÈë½á¾Ö
+        // æ˜¯å¦è¿›å…¥ç»“å±€
         if (currentDay >= totalDays)
         {
             EnterEnding();
@@ -61,11 +61,11 @@ public class DaySystem : MonoBehaviour
         currentDay++;
         timer = dayDuration;
 
-        Debug.Log($"µÚ {currentDay} Ìì¿ªÊ¼");
+        Debug.Log($"ç¬¬ {currentDay} å¤©å¼€å§‹");
     }
 
     /// <summary>
-    /// ½øÈë½á¾Ö£¨µÚÊ®ËÄÌì£©
+    /// è¿›å…¥ç»“å±€ï¼ˆç¬¬åå››å¤©ï¼‰
     /// </summary>
     private void EnterEnding()
     {
