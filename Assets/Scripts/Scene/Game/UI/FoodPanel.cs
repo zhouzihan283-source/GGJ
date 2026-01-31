@@ -38,6 +38,8 @@ public class FoodPanel : BasePanel
     private Options _options;
 
     private List<EatData> eatDatas;
+    private int eatCount;
+    
     private void Start()
     {
         _role1 = GameObject.Find("character1Btn").GetComponentInChildren<RoleObject>();
@@ -113,20 +115,16 @@ public class FoodPanel : BasePanel
             if ((_options & Options.Character4) == Options.Character4) _role4.EatFood();
 
             eatDatas = GameDataManager.Instance.eatDatas;
+            eatCount++;
             
-            if(eatDatas.TryFind(n=>n.EatNum == _diary.eatCount,out EatData data))
+            if(eatDatas.TryFind(n=>n.EatNum == eatCount, out var data))
             {
-                BookPanel bookPanel = UIManager.Instance.GetPanel<BookPanel>();
+                var bookPanel = UIManager.Instance.GetPanel<BookPanel>();
                 bookPanel.SetContent(data.Content);
             }
+            
+            UIManager.Instance.HidePanel<FoodPanel>();
         });
-    }
-
-    private void Update()
-    {
-        base.Update();
-        const Options fedAnyone = Options.Character1 | Options.Character2 | Options.Character3 | Options.Character4;
-        if ((_options & fedAnyone) != fedAnyone) _diary.eatCount++;
     }
 
     [Flags]
