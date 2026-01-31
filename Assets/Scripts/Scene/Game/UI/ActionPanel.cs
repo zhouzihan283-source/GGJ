@@ -28,7 +28,7 @@ public class ActionPanel : BasePanel
         });
         
         btAct.onClick.AddListener(() =>
-        {
+        { 
             UIManager.Instance.ShowPanel<ChoosePanel>();
         });
         
