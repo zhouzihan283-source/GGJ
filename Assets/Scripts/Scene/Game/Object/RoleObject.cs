@@ -85,6 +85,26 @@ public class RoleObject : MonoBehaviour
         currentHp = 1;
         DaySystem.Instance.NextDay();
     }
+    /// <summary>
+    /// 杀人
+    /// </summary>
+    public void KillRole()
+    {
+        if (currentState == RoleLifeState.death)
+            return;
+        
+        currentHp = 0;
+        DaySystem.Instance.NextDay();
+    }
+    
+    /// <summary>
+    /// 偷食物
+    /// </summary>
+    public void StealFood()
+    {
+        currentHp = 2;
+        DaySystem.Instance.NextDay();
+    }
 
     /// <summary>
     /// 每天扣血
