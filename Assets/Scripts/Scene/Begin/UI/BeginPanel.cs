@@ -51,6 +51,8 @@ public class BeginPanel : BasePanel
         UIManager.Instance.ShowPanel<GamePanel>();
         UIManager.Instance.HidePanel<BeginPanel>();
         SceneManager.LoadScene("GameScene");
+        BookPanel bookPanel = UIManager.Instance.ShowPanel<BookPanel>();
+        bookPanel.gameObject.SetActive(false);
     }
 
     

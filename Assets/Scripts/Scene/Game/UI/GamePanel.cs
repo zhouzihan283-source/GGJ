@@ -65,22 +65,24 @@ public class GamePanel : BasePanel
         {
             
         });
-        
+        //食物
         btFood.onClick.AddListener(() =>
         {
             UIManager.Instance.ShowPanel<FoodPanel>();
         });
-        
+        //行动
         btAct.onClick.AddListener(() =>
         {
             UIManager.Instance.ShowPanel<ActionPanel>();
         });
-        
+        //日志
         btNote.onClick.AddListener(() =>
         {
-            
+            BookPanel bookPanel = UIManager.Instance.GetPanel<BookPanel>();
+            bookPanel.gameObject.SetActive(true);
+            bookPanel.SetContent();
         });
-        
+        //帮助
         btHelp.onClick.AddListener(() =>
         {
             UIManager.Instance.ShowPanel<HelpPanel>();

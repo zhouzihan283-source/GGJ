@@ -46,6 +46,8 @@ public class DaySystem : MonoBehaviour
             EnterEnding();
             return;
         }
+        GameDataManager.Instance.ClearContent();
+        GameDataManager.Instance.dayCount++;
 
         currentDay++;
         ChangeDayPanel changeDayPanel = UIManager.Instance.ShowPanel<ChangeDayPanel>();

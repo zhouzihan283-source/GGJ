@@ -31,14 +31,10 @@ public class ChoosePanel : BasePanel
     private RoleObject _role4;
 
     public List<OutsideData> outsideDatas;
-    public GameObject book;
-    private BookPanel _bookPanel;
-
-    private int num;
+    
 
     private void Start()
     {
-        _bookPanel = book.GetComponent<BookPanel>();
         _role1 = GameObject.Find("character1Btn").GetComponentInChildren<RoleObject>();
         _role2 = GameObject.Find("character2Btn").GetComponentInChildren<RoleObject>();
         _role3 = GameObject.Find("character3Btn").GetComponentInChildren<RoleObject>();
@@ -93,21 +89,23 @@ public class ChoosePanel : BasePanel
         
         btSure.onClick.AddListener(() =>
         {
+
+            GameDataManager.Instance.outsideCount += 1;
+            
+            outsideDatas = GameDataManager.Instance.outsideDatas;
+            
+            if(outsideDatas.TryFind(n=>n.OutsideNum == GameDataManager.Instance.outsideCount,out OutsideData data))
+            {
+                GameDataManager.Instance.AddContent(data.Content);
+            }
             if (_imageObj1.activeInHierarchy) _role1.GoOutSide();
             if (_imageObj2.activeInHierarchy) _role2.GoOutSide();
             if (_imageObj3.activeInHierarchy) _role3.GoOutSide();
             if (_imageObj4.activeInHierarchy) _role4.GoOutSide();
             
-            num++;
-            outsideDatas = GameDataManager.Instance.outsideDatas;
-            
-            if(outsideDatas.TryFind(n=>n.OutsideNum == num,out OutsideData data))
-            {
-                BookPanel bookPanel = UIManager.Instance.GetPanel<BookPanel>();
-                bookPanel.SetContent(data.Content);
-            }
-            
             UIManager.Instance.HidePanel<ChoosePanel>();
+            UIManager.Instance.HidePanel<ActionPanel>();
+            
         });
     }
 }

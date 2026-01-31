@@ -9,4 +9,8 @@ public class HearData
     public int Id;
     public int HearResult;
     public string Content;
+    /// <summary> 明天 </summary>
+    public int D1;
+    /// <summary> 后天 </summary>
+    public int D2;
 }

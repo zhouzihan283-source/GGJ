@@ -15,6 +15,8 @@ public abstract class BasePanel : MonoBehaviour
     public bool isShow = false;
 
     private UnityAction hideCallBack = null;
+    
+    protected bool enableFade = true;
 
 
     protected virtual void Awake()
@@ -43,6 +45,8 @@ public abstract class BasePanel : MonoBehaviour
     
     protected virtual void Update()
     {
+        if (!enableFade) return;
+        
         if (isShow && canvasGroup.alpha != 1)
         {
             canvasGroup.alpha += alphaSpeed * Time.deltaTime;

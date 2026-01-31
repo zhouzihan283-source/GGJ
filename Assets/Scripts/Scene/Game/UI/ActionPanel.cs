@@ -35,7 +35,9 @@ public class ActionPanel : BasePanel
         //偷听
         btHear.onClick.AddListener(() =>
         {
-            
+            HearSystem.Instance.GetHearContent();
+            UIManager.Instance.HidePanel<ActionPanel>();
+            DaySystem.Instance.NextDay();
         });
         //杀人
         btKill.onClick.AddListener(() =>

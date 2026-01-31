@@ -31,14 +31,12 @@ public class FoodPanel : BasePanel
     private RoleObject _role2;
     private RoleObject _role3;
     private RoleObject _role4;
-
-    public GameObject diary;
+    
     private DiaryManager _diary;
 
     private Options _options;
 
     private List<EatData> eatDatas;
-    private int eatCount;
     
     private void Start()
     {
@@ -51,8 +49,7 @@ public class FoodPanel : BasePanel
         _imageObj2 = GameObject.Find("character2").transform.GetChild(0).gameObject;
         _imageObj3 = GameObject.Find("character3").transform.GetChild(0).gameObject;
         _imageObj4 = GameObject.Find("character4").transform.GetChild(0).gameObject;
-
-        _diary = diary.GetComponent<DiaryManager>();
+        
         _options = Options.None;
 
         // Flags 位掩码枚举使用 |= 或等于 运算符将右边的枚举值添加到已有的枚举中，使用 A &= ~B 运算将右边的枚举值从左边的枚举中移除
@@ -115,12 +112,12 @@ public class FoodPanel : BasePanel
             if ((_options & Options.Character4) == Options.Character4) _role4.EatFood();
 
             eatDatas = GameDataManager.Instance.eatDatas;
-            eatCount++;
+
+            GameDataManager.Instance.eatCount += 1;
             
-            if(eatDatas.TryFind(n=>n.EatNum == eatCount, out var data))
+            if(eatDatas.TryFind(n=>n.EatNum == GameDataManager.Instance.eatCount, out var data))
             {
-                var bookPanel = UIManager.Instance.GetPanel<BookPanel>();
-                bookPanel.SetContent(data.Content);
+                GameDataManager.Instance.AddContent(data.Content);
             }
             
             UIManager.Instance.HidePanel<FoodPanel>();
