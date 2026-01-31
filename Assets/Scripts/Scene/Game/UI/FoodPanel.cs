@@ -2,9 +2,12 @@ using System;
 using System.Collections;
 using System.Collections.Generic;
 using System.Linq;
+using Core;
+using Unity.VisualScripting;
 using UnityEngine;
 using UnityEngine.SceneManagement;
 using UnityEngine.UI;
+using ZZH.Core;
 
 /// <summary>
 /// 选择喂食物面板
@@ -29,7 +32,12 @@ public class FoodPanel : BasePanel
     private RoleObject _role3;
     private RoleObject _role4;
 
-    private Options _options = Options.None;
+    public GameObject diary;
+    private DiaryManager _diary;
+
+    private Options _options;
+
+    private List<EatData> eatDatas;
     private void Start()
     {
         _role1 = GameObject.Find("character1Btn").GetComponentInChildren<RoleObject>();
@@ -41,6 +49,9 @@ public class FoodPanel : BasePanel
         _imageObj2 = GameObject.Find("character2").transform.GetChild(0).gameObject;
         _imageObj3 = GameObject.Find("character3").transform.GetChild(0).gameObject;
         _imageObj4 = GameObject.Find("character4").transform.GetChild(0).gameObject;
+
+        _diary = diary.GetComponent<DiaryManager>();
+        _options = Options.None;
 
         // Flags 位掩码枚举使用 |= 或等于 运算符将右边的枚举值添加到已有的枚举中，使用 A &= ~B 运算将右边的枚举值从左边的枚举中移除
         character1.onClick.AddListener(() =>
@@ -100,11 +111,24 @@ public class FoodPanel : BasePanel
             if ((_options & Options.Character2) == Options.Character2) _role2.EatFood();
             if ((_options & Options.Character3) == Options.Character3) _role3.EatFood();
             if ((_options & Options.Character4) == Options.Character4) _role4.EatFood();
+
+            eatDatas = GameDataManager.Instance.eatDatas;
             
+            if(eatDatas.TryFind(n=>n.EatNum == _diary.eatCount,out EatData data))
+            {
+                BookPanel bookPanel = UIManager.Instance.GetPanel<BookPanel>();
+                bookPanel.SetContent(data.Content);
+            }
         });
-        
     }
-    
+
+    private void Update()
+    {
+        base.Update();
+        const Options fedAnyone = Options.Character1 | Options.Character2 | Options.Character3 | Options.Character4;
+        if ((_options & fedAnyone) != fedAnyone) _diary.eatCount++;
+    }
+
     [Flags]
     public enum Options
     {
@@ -113,34 +137,5 @@ public class FoodPanel : BasePanel
         Character2 = 1 << 1,
         Character3 = 1 << 2,
         Character4 = 1 << 3
-    }
-
-    public static List<GameObject> GetAllSceneObjects(bool includeInactive = true)
-    {
-        var allObjects = new List<GameObject>();
-        var rootObjects = SceneManager.GetActiveScene().GetRootGameObjects();
-    
-        foreach (var root in rootObjects)
-        {
-            // 如果includeInactive为false，且根物体被禁用，则跳过
-            if (!includeInactive && !root.activeInHierarchy) continue;
-        
-            allObjects.Add(root);
-            GetChildrenRecursive(root.transform, allObjects, includeInactive);
-        }
-    
-        return allObjects;
-    }
-
-    private static void GetChildrenRecursive(Transform parent, List<GameObject> objectList, bool includeInactive)
-    {
-        foreach (Transform child in parent)
-        {
-            if (includeInactive || child.gameObject.activeInHierarchy)
-            {
-                objectList.Add(child.gameObject);
-                GetChildrenRecursive(child, objectList, includeInactive);
-            }
-        }
     }
 }
