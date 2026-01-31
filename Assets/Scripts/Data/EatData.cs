@@ -2,7 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 /// <summary>
-/// 进食数据
+/// 杩涢鏁版嵁
 /// </summary>
 public class EatData
 {

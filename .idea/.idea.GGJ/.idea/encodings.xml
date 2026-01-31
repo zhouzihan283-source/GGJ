@@ -1,7 +1,12 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="Encoding" addBOMForNewFiles="with BOM under Windows, with no BOM otherwise">
+    <file url="file://$PROJECT_DIR$/Assets/Scripts/Data/DayData.cs" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/Assets/Scripts/Data/EatData.cs" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/Assets/Scripts/Data/EndData.cs" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/Assets/Scripts/Data/HearData.cs" charset="UTF-8" />
     <file url="file://$PROJECT_DIR$/Assets/Scripts/Data/MusicData.cs" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/Assets/Scripts/Data/OutsideData.cs" charset="UTF-8" />
     <file url="file://$PROJECT_DIR$/Assets/Scripts/Data/RoleData.cs" charset="UTF-8" />
     <file url="file://$PROJECT_DIR$/Assets/Scripts/Scene/Game/Object/RoleObject.cs" charset="UTF-8" />
     <file url="file://$PROJECT_DIR$/Assets/Scripts/Scene/Game/UI/ActionPanel.cs" charset="UTF-8" />
@@ -10,5 +15,6 @@
     <file url="file://$PROJECT_DIR$/Assets/Scripts/Scene/Game/UI/GamePanel.cs" charset="UTF-8" />
     <file url="file://$PROJECT_DIR$/Assets/Scripts/Scene/Game/UI/HelpPanel.cs" charset="UTF-8" />
     <file url="file://$PROJECT_DIR$/Assets/Scripts/System/DaySystem.cs" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/Assets/Scripts/System/HearSystem.cs" charset="UTF-8" />
   </component>
 </project>

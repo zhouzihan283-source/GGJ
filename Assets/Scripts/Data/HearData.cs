@@ -2,7 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 /// <summary>
-/// ÍµÌıÊı¾İ
+/// å·å¬æ•°æ®
 /// </summary>
 public class HearData
 {

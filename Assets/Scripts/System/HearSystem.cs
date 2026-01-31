@@ -2,7 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 /// <summary>
-/// ͵��ϵͳ
+/// 偷听系统
 /// </summary>
 public class HearSystem : MonoBehaviour
 {

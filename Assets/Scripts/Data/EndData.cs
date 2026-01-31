@@ -2,7 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 /// <summary>
-/// 结局数据
+/// 缁撳眬鏁版嵁
 /// </summary>
 public class EndData
 {

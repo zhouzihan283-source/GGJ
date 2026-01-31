@@ -2,7 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 /// <summary>
-/// 每天数据
+/// 姣忓ぉ鏁版嵁
 /// </summary>
 public class DayData
 {

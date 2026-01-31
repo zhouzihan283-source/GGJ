@@ -2,7 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 /// <summary>
-/// 外出数据
+/// 澶栧嚭鏁版嵁
 /// </summary>
 public class OutsideData
 {
